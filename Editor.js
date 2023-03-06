@@ -1,14 +1,13 @@
 import './style.css'
 import React from 'react';
 import ReactQuill,{Quill} from 'react-quill'
-import {useState,forwardRef,useImperativeHandle} from "react"
 import axios from "axios";
 import 'react-quill/dist/quill.snow.css'
 import { useMemo,useRef } from 'react';
 
 
-// const url = 'https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload';
-// const preset = 'bfqtctpv';
+const url = 'https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload';
+const preset = 'bfqtctpv';
 
 const Editor = () =>{
 
@@ -16,6 +15,7 @@ const Editor = () =>{
   
    const onClickFunc = () => {
     console.log(editor.current.value)
+    
    }
 
 
