@@ -11,10 +11,14 @@ import { useMemo,useRef } from 'react';
 // const preset = 'bfqtctpv';
 
 const Editor = () =>{
-   const onClickFunc = () => {
-     
-   }
+
    const editor = useRef()
+  
+   const onClickFunc = () => {
+    console.log(editor.current.value)
+   }
+
+
 
    var tempImage = []
      
@@ -90,8 +94,8 @@ const Editor = () =>{
      var has = Object.prototype.hasOwnProperty;
  
      if (has.call(insert, 'image')) {
-         // var imageUrl = await uploadToServer(insert.image);
-         // insert.image = imageUrl;
+         var imageUrl = await uploadToServer(insert.image);
+         insert.image = imageUrl;
      }
  }
  
@@ -142,6 +146,7 @@ const Editor = () =>{
       <button onClick = {onClickFunc} className ="postQuestion" > Post Your Question </button></div> 
     </div>
   )
+  {editor.current.value}
   }
   
   export default Editor
