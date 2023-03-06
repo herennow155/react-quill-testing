@@ -15,13 +15,8 @@ const Editor = () =>{
      
    }
    const editor = useRef()
-   
-     const submitHandlerChild = () => {
-     const quill = editor.current.getEditor();
-     const contents = quill.getContents();
-     props.passParentFunction(editor.current.value)
-     }
-     var tempImage = []
+
+   var tempImage = []
      
    function isQuillEmpty(quill) {
    if ((quill.getContents()['ops'] || []).length !== 1) {
