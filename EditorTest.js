@@ -9,9 +9,15 @@ const EditorTest = () =>{
 
 return(
   <div>
-    <
-    <textarea rows="10" cols ="10" />
-    <form />
+
+    <form>
+    <textarea rows="10" cols ="30" />
+    <br />
+    <button onClick = "submitImage"> Upload </button>
+    </form >
+    <hr />
+
+
   </div>
 )
 
