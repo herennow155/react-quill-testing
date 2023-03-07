@@ -7,15 +7,25 @@ import { useMemo,useRef } from 'react';
 const EditorTest = () =>{
 
 
+
+
+
 return(
   <div>
 
     <form>
-    <textarea rows="10" cols ="30" />
-    <br />
-    <button onClick = "submitImage"> Upload </button>
+          <textarea rows="10" cols ="30" />
+          <br />
+          <button onClick = "submitImage"> Upload blob/binary </button>
+          </form >
+          <hr />
+    <form>
+          <input type = "file" />
+          <br />
+          <br />
+          <button onClick = "submitImage"> UploadTest </button>
     </form >
-    <hr />
+
 
 
   </div>
