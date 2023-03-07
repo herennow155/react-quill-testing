@@ -1,15 +1,32 @@
 import React from 'react';
 import ReactQuill,{Quill} from 'react-quill'
-import axios from "axios";
+import axios from 'axios'
 import 'react-quill/dist/quill.snow.css'
-import { useMemo,useRef } from 'react';
+import { useRef } from 'react';
 
 const EditorTest = () =>{
-
-
-
-
+  const url = 'https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload';
   
+
+
+const blobSend = () => {
+
+}
+
+
+
+const imageSend = async(event) => {
+  const files = e.target.files
+  const formData = new FormData();
+  formData.append("file", files[0]);
+  formData.append("upload_preset", "enuym4kv")
+   await axios.post(url, formData);
+  // const imageUrl = res.data.secure_url;
+
+}
+
+
+
 
 
 
@@ -19,7 +36,7 @@ return(
     <form>
           <textarea rows="10" cols ="30" />
           <br />
-          <button onClick {blobSend}> Upload blob/binary </button>
+          <button onClick ={blobSend}> Upload blob/binary </button>
           </form >
           <hr />
     <form>

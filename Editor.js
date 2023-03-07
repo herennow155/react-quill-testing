@@ -59,7 +59,6 @@ const Editor = () =>{
    input.setAttribute('type', 'file');
    input.setAttribute('accept', 'image/*');
    input.click();
- 
    input.onchange = () => {
        var [file] = input.files;
  
