@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import ReactQuill from 'react-quill'
-import 'react-quill/dist/quill.snow.css'
+import  "react-quill/dist/quill.snow.css"
 import {useRef} from "react"
 
 export default function App() {

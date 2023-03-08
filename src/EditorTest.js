@@ -2,49 +2,64 @@ import React from 'react';
 import ReactQuill,{Quill} from 'react-quill'
 import axios from 'axios'
 import 'react-quill/dist/quill.snow.css'
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 
 const EditorTest = () =>{
-  const url = 'https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload';
-  
+  // const url = 'https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload';
+  const fileTest = useRef()
+  const useBinary = useRef()
 
 
 const blobSend = () => {
-
-}
-
-
-
-const imageSend = async(event) => {
-  const files = e.target.files
+  e.preventDefault()
+  const files = useBinary.current.files
+  console.log(files)
   const formData = new FormData();
   formData.append("file", files[0]);
-  formData.append("upload_preset", "enuym4kv")
-   await axios.post(url, formData);
-  // const imageUrl = res.data.secure_url;
+  formData.append("upload_preset", "enuym4kv");
+  const { data } = axios.post(
+    "https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload",
+    formData)
 
 }
 
 
 
+const imageSend = async(e) => {
 
+  e.preventDefault()
+  const files = fileTest.current.files
+  console.log(files)
+  const formData = new FormData();
+  formData.append("file", files[0]);
+  formData.append("upload_preset", "enuym4kv");
 
+  const { data } = await axios.post(
+    "https://api.cloudinary.com/v1_1/dj4i8zoqp/image/upload",
+    formData
+    
+  )
+
+  // setImage(data.secure_url)
+
+  // console.log("data", data);
+}
 
 return(
   <div>
 
     <form>
-          <textarea rows="10" cols ="30" />
+          <textarea rows="10" cols ="30" ref ={useBinary}/>
           <br />
           <button onClick ={blobSend}> Upload blob/binary </button>
           </form >
           <hr />
     <form>
-          <input type = "file" />
+          <input type = "file" name = "fileTest" ref = {fileTest}/>
           <br />
           <br />
           <button onClick = {imageSend}> UploadTest </button>
-    </form >
+    </ form>
 
 
 
