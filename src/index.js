@@ -11,8 +11,8 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    {/* <App /> */}
+    <App />
     {/* <Editor /> */}
-    <EditorTest />
+    {/* <EditorTest /> */}
   </StrictMode>
 );

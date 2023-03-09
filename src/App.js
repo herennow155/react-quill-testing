@@ -38,8 +38,8 @@ export default function App() {
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen </p>
-      <ReactQuill modules = {modules} ref = {editor}/>
-      <button onClick = {editorValues}> Submit </button>
+      <ReactQuill modules = {modules} ref = {editor} className = "quillheight"/>
+      <button onClick = {editorValues} className = 'subButton'> Submit </button>
 
 
     </div>

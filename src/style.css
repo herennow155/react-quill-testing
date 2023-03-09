@@ -5,3 +5,10 @@ h1, p {
 body{
   margin: 10px;
 }
+.quillheight{
+  height: 440px;
+  width: 60%
+}
+.subButton{
+  margin-top: 40px;
+}
